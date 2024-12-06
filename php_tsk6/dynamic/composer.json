@@ -1,0 +1,8 @@
+{
+    "require": {
+        "fakerphp/faker": "^1.24",
+        "szymach/c-pchart": "^3.0",
+        "amenadiel/jpgraph": "^4.1",
+        "ext-gd": "*"
+    }
+}

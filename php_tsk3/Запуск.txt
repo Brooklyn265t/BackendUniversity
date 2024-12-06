@@ -1,0 +1,2 @@
+docker-compose up
+чтобы попасть в dynamic нужно localhost/tools/index.php

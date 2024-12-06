@@ -1,0 +1,77 @@
+body{
+  display: grid;
+  background-color: rgb(152, 97, 1);
+}
+
+.registration-form{
+  display: grid;
+  position: absolute;
+  border: 1px solid #c08b05;
+  padding: 5px;
+  width: 230px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form{
+  display: grid;
+  position: absolute;
+  border: 1px solid #da7f0a;
+  padding: 5px;
+  width: 230px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+input, .SendData{
+  display: grid;
+  width: 200px;
+  margin-top: 5px;
+  margin-left: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+aside {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: aqua;
+  animation: pulse 2s infinite alternate;
+  z-index: -1;
+ }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+#selectformbutton{
+  display: inline;
+  position: absolute;
+  height: 60px;
+  width: 140px;
+  top: 35%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(173, 73, 1);
+  margin-left: 20px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  border: grey 0px 8px;
+}
+
+#selectformbutton:hover{
+  display: inline;
+  background-color: transparent;
+  opacity: 60%;
+}

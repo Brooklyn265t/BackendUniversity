@@ -1,0 +1,12 @@
+#backgroundsites{
+    background-color: #D7B19D;
+    display: grid;
+}
+#photobackground{
+    background-color: #402218;
+}
+img{
+    top: 10px;
+    width: 600px;
+    height: 600px;
+}

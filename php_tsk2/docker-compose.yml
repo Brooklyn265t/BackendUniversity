@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web_server:
+    volumes:
+      - /var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    restart: always
+    depends_on:
+      - drawer
+      - quicksort
+      - comandunix
+
+  drawer:
+    build: ./drawer
+
+  quicksort:
+    build: ./quicksort
+
+  comandunix:
+    build: ./comandUnix
+
+

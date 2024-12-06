@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  cache:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --loglevel warning
+    volumes:
+      - cache:/data
+
+  database:
+    image: mysql:8
+    volumes:
+      - ./Mysql:/docker-entrypoint-initdb.d/
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: coffeeprice
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+    - "3306:3306"
+  
+  webserver:
+    volumes:
+      - ./dynamic:/var/www/html
+    build:
+      context: ./dynamic
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - database
+  
+  static_server:
+    volumes:
+      - ./static:/usr/share/nginx/html
+      - ./static/nginx.default.conf:/etc/nginx/conf.d/default.conf
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    restart: always
+    depends_on:
+      - webserver
+
+volumes:
+  db_data:
+  cache:
+    driver: local
